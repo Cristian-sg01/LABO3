@@ -1,0 +1,45 @@
+1.gitignore: Este archivo se utiliza en proyectos que usan Git para el control de versiones. En este archivo, puedes especificar los nombres de archivos o patrones de nombres de archivos que deseas que Git ignore, es decir, que no sean rastreados ni incluidos en los commits. 
+
+Ejemplo:
+
+# .gitignore
+node_modules/
+*.log
+Esto le indica a Git que ignore la carpeta node_modules/ y todos los archivos que terminen en .log. Esto es útil para evitar que archivos temporales, logs, dependencias, etc., se incluyan en tu repositorio.
+
+
+2. package.json: Este archivo es fundamental en los proyectos de Node.js. Contiene metadatos sobre el proyecto y sus dependencias. 
+Ejemplo:
+
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "Un proyecto de ejemplo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+
+En este ejemplo, name, version y description son metadatos del proyecto. main especifica el punto de entrada del proyecto. scripts define comandos personalizados que puedes ejecutar, en este caso, npm start ejecutará node index.js. dependencies lista las dependencias del proyecto, en este caso, express.
+
+
+3. yarn.lock: El propósito principal de yarn.lock es asegurar que todos los que trabajan en el mismo proyecto instalen exactamente las mismas versiones de las dependencias, independientemente de cuándo y dónde se instalen. Esto ayuda a evitar problemas que pueden surgir debido a diferencias en las versiones de las dependencias.
+
+Ejemplo:
+
+# yarn.lock
+react@^16.8.6:
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#b715d534f7f8968b2de06a635e6c8e6e3d3e843f"
+  integrity sha512-pzjw8f+ua7Kw1TIq0toYxLXPtFb4e2SCpssdl3rKAXOe3H0cw3tNtPfRoZJBt2B97VgvR5xgZoE5a3Qz1n4+eg==
+
+react-dom@^16.8.6:
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
+  integrity sha512-FLRF1N+4eKz7IjK8x8C/NkZvOF+FP/Wv25Gj2e6yfRhH1FfpH4OdMqofv8QKJfpF8BZ5BnFVZ8zJc1yLTMmCOg==
+
+En este ejemplo, el proyecto depende de react y react-dom, ambas en la versión 16.8.6. La URL resuelta y la suma de comprobación de integridad también se almacenan para cada paquete, lo que permite a Yarn verificar y asegurar la integridad de las descargas futuras.
